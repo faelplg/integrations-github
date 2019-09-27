@@ -1,0 +1,260 @@
+/*
+ * Variables
+ */
+@import './assets/stylesheets/variables.scss';
+@import './assets/stylesheets/typography.scss';
+$backgroundColor: #FAFAFA;
+$accentColor: #f5e2ff;
+$frontlab: #AA00FF;
+
+/*
+ * frontlab theme
+ */
+.frontlab--color {
+  color: $frontlab;
+}
+
+/*
+ * Base
+ */
+html, body {
+  height: 100%;
+  background-color: $backgroundColor;
+  color: #222222;
+  margin:0;
+  overflow-x: hidden;
+}
+div {
+  box-sizing: border-box;
+}
+
+/*
+ * Grid styles
+ */
+#grid__container {
+  overflow-y: scroll;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 64px min-content auto min-content;
+  grid-template-columns: auto;
+  grid-gap: 8px 8px;
+}
+.grid__header {
+  height: 64px;
+}
+.grid__main {
+  max-height: 100px;
+}
+
+/*
+ * Flex styles
+ */
+.flex {
+  display: flex;
+}
+.inline-flex {
+  display: inline-flex;
+}
+
+.flow--row {
+  flex-flow: row wrap;
+}
+.flow--column {
+  flex-flow: column wrap;
+}
+.flex__item,
+.flow--row *,
+.flow--column * {
+  flex: auto;
+}
+.flex--none {
+  flex: none;
+}
+.align__items--center {
+  align-items: center;
+}
+.justify__content--center {
+  justify-content: center;
+}
+.align__self--center {
+  align-self: center;
+}
+
+/*
+ * Container styles
+ */
+.page__content {
+  // phones
+  @media (max-width:$phone_only) {
+    padding: 0 10px;
+  }
+  // tablet portrait
+  @media (min-width: $tablet_portrait_min) and (max-width: $tablet_portrait_max) {
+    padding: 0 40px;
+  }
+  // tablet landscape
+  @media (min-width: $tablet_landscape_min) and (max-width: $tablet_landscape_max) {
+    padding: 0 60px;
+  }
+  // desktops
+  @media (min-width: $desktop_min) and (max-width: $desktop_max) {
+    padding: 0 220px;
+  }
+  // large desktops
+  @media (min-width: $big_desktop_min) {
+    padding: 0 300px;
+  }
+}
+.content--padding {
+  box-sizing: border-box;
+  padding: 8px;
+  @media (min-width: 960px) {
+    padding: 16px;
+  }
+}
+.content--margin {
+  margin: 8px;
+  @media (min-width: 960px) {
+    margin: 16px;
+  }
+}
+
+/*
+ * Toolbar
+ */
+.toolbar {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 64px;
+  position: fixed;
+  padding: 0 16px;
+  background-color: $backgroundColor;
+  transition: all 0.6s ease;
+}
+.toolbar:not(.toolbar--raised) > h1 {
+  opacity: 0;
+}
+.toolbar--raised {
+  box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+  border: none;
+  background-color: $accentColor;
+  color: #222;
+  opacity: 0.79;
+}
+
+/*
+ * Cards
+ */
+.card {
+  height: 100px;
+  margin: 5px;
+  max-width: 280px;
+  min-width: 200px;
+  background-color: #DFDFDF;
+  transition: all 0.4s ease;
+}
+.card:not(.disabled) {
+  box-shadow: $box_shadow;
+}
+.card.inactive {
+  display: none;
+}
+.card:focus {
+  outline: none;
+}
+.card.disabled {
+  background-color: #EAEAEA;
+  color: #999999;
+}
+.card:not(.disabled):hover {
+  cursor: pointer;
+  background-color: $accentColor;
+  box-shadow: $big_box_shadow;
+}
+
+/*
+ * Icon style
+ */
+.icon {
+  height:60px;
+  width:60px;
+  margin: 0px 8px;
+  // phones
+  @media (max-width:$phone_only) {
+    height:60px;
+    width:60px;
+  }
+  // tablet portrait
+  @media (min-width: $tablet_portrait_min) and (max-width: $tablet_portrait_max) {
+    height:75px;
+    width:75px;
+  }
+  // tablet landscape
+  @media (min-width: $tablet_landscape_min) and (max-width: $tablet_landscape_max) {
+    height:80px;
+    width:80px;
+  }
+  // desktops
+  @media (min-width: $desktop_min) and (max-width: $desktop_max) {
+    height:95px;
+    width:95px;
+  }
+  // large desktops
+  @media (min-width: $big_desktop_min) {
+    height:100px;
+    width:100px;
+  }
+}
+
+/*
+ * Button styles
+ */
+.button {
+  box-sizing: border-box;
+  background-color: $frontlab;
+  font-weight: bold;
+  color: white;
+  height: 36px;
+  min-width: 48px;
+  margin: 8px 16px;
+  padding: 0 16px;
+  box-shadow: 0 3px 1px -2px rgba(206, 16, 16, 0.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  transition: box-shadow .28s cubic-bezier(.4,0,.2,1);
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+.button:hover {
+  opacity: 0.82;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+}
+.button:active,
+.button:focus {
+  outline: none;
+}
+.button:active {
+  box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+}
+
+/*
+ * Tables
+ */
+table {
+  @media (max-width:$phone_only) {
+    display: none;
+  }
+}
+tr > th,
+tr > td {
+  padding: 16px;
+}
+
+/*
+ * Breath
+ */
+.no-margins {
+  margin: 0;
+}

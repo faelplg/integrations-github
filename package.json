@@ -1,0 +1,69 @@
+{
+  "name": "github-integration",
+  "version": "0.1.0",
+  "description": "Tests with GitHub API.",
+  "main": "index.js",
+  "scripts": {
+    "serve:dev": "echo \"Trying to serve the development environment...\" && webpack-dev-server -d --config webpack.serve.dev.config.js",
+    "serve:dev:dashboard": "echo \"Trying to serve the development environment with dashboard visualization...\" && webpack-dashboard -- webpack-dev-server -d --config webpack.serve.dev.config.js",
+    "serve:prod": "echo \"Trying to serve the production environment...\" && http-server --proxy http://localhost:8080? -o",
+    "build:dev": "echo \"Trying to build the application from the development environment...\" && webpack --config webpack.build.dev.config.js",
+    "build:prod": "echo \"Trying to build the application from the production environment...\" && webpack --config webpack.build.prod.config.js",
+    "build:test": "webpack",
+    "doc:jsdoc": "echo \"Generating JavaScript documentation using JSDoc...\" && rm -rfv scriptguide/ && jsdoc src -r -R ./src/SCRIPTGUIDE.md -d scriptguide",
+    "doc:sassdoc": "echo \"Generating style documentation using SASSDoc...\" && sassdoc ./src -d styleguide",
+    "rm:docs": "echo \"Removing all documentation folders...\" && rm -rfv styleguide/ scriptguide/",
+    "rm:build": "echo \"Removing dist folders...\" && rm -rfv public/ dist/",
+    "test": "echo \"This is a test.\" && exit 1",
+    "clean": "echo \"Cleaning public/ directory and documentation folders...\" && npm run rm:build && npm run rm:docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faelplg/frontlab.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "FrontEnd",
+    "Lab"
+  ],
+  "author": "faelplg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/faelplg/frontlab/issues"
+  },
+  "homepage": "https://github.com/faelplg/frontlab#readme",
+  "browserslist": [
+    "last 1 version",
+    "> 5%",
+    "not dead",
+    "not ie > 1",
+    "not ie_mob > 1"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "fibers": "^4.0.1",
+    "file-loader": "^4.2.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "raw-loader": "^3.1.0",
+    "sass": "^1.22.10",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7",
+    "webpack-dashboard": "^3.1.0",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "markdown-it": "^10.0.0",
+    "moment": "^2.24.0"
+  }
+}
