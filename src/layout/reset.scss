@@ -1,0 +1,56 @@
+////
+/// @group reset
+/// @author **Adapted from source:** [meyerweb](http://meyerweb.com/eric/tools/css/reset/) v2.0 | 20110126. *License: none (public domain)*
+
+/// Reset styles
+///
+/// The reset is a strategy for avoiding browser inconsistencies regards the default properties for general HTML elements.
+html, body, div, span, applet, object, iframe, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /* font-size: 100%; */
+  /* font: inherit; */
+  vertical-align: baseline;
+}
+
+tbody, tfoot, thead, tr, th, td {
+  vertical-align: middle;
+}
+
+/// HTML5 display-role reset for older browsers
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+/* Disabled body line-height. */
+/* body {
+    line-height: 1;
+} */
+/// Reset button:focus outline.
+button:focus {
+  outline: none;
+}
+/// Reset list-style.
+ol, ul {
+    list-style: none;
+}
+/// Reset blockquotes.
+blockquote, q {
+    quotes: none;
+}
+/// Reset blockquotes content of pseudo-elements.
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+/// Reset tables.
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/// Reset links and force it to cursor:pointer.
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+  

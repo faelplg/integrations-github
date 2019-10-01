@@ -4,84 +4,52 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>GitHub - Integration with APIs.</title>
+    <title>Integrations - GitHub API</title>
     <meta name="author" content="faelplg">
     <meta name="description" content="Integration with GitHub APIs.">
   </head>
   <body>
-    <div id="grid__container" onscroll="onScroll()">
-      <div class="grid__header">
-        <div class="toolbar flex flex--row align__items--center">
-          <h1 id="title-frontlab" role="button" class="text-mono">GitHub</h1>
-          <span class="flex__item"></span>
-          <button id="button-wtf" class="button" type="button" aria-label="What is this project?">wtf</button>
-        </div>
-      </div>
-      <div class="grid__main">
-        <div class="flex flex--row align__items--center">
-          <span class="flex__item"></span>
-          <svg id="Layer_1" class="icon flex--none" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" style="max-height: 100px;">
-            <defs>
-              <style>.cls-1{fill:#a0f;}</style>
-            </defs>
-            <title>lab</title>
-            <path class="cls-1" d="M73.54,62.54V56.69h-3V51.26H67V46.63H64V42h-3V38.75H58.45V35.54H56.29V31.89h-3V18.39h3V16h3V9.85H54.36v2.39h-3V13.8h-3V30.4H31.63V13.8h-3V12.24h-3V9.85H20.75V16h3v2.4h3v13.5h-3v3.65H21.55v3.21H19.08V42H16v4.67H13v4.63H9.49v5.43h-3v5.85H4.3v5.29H6.94V71.1h4v3H69.07v-3h4V67.83H75.7V62.54Zm-3.91,3.27H67v3H13v-3H10.37V63.12h2.16V57.68h3V53.05h3.52V48.38h3V45.17h3V42h2.47V38.31h2.16V35.68H50.22v2.63h2.16V42h2.47v3.21h3v3.21h3v4.67h3.52v4.63h3v5.44h2.16Z"/>
-            <rect class="cls-1" x="23.24" y="5.88" width="33.52" height="5.1"/>
-            <polygon class="cls-1" points="30.59 56.96 32.71 56.96 32.71 58.78 34.66 58.78 34.66 62.41 30.76 62.41 30.76 60.59 28.81 60.59 28.81 58.78 26.69 58.78 26.69 56.78 24.91 56.78 24.91 53.16 26.69 53.16 26.69 51.16 28.81 51.16 28.81 49.34 30.76 49.34 30.76 47.52 34.66 47.52 34.66 51.16 32.71 51.16 32.71 52.97 30.59 52.97 30.59 56.96"/>
-            <polygon class="cls-1" points="49.58 52.97 47.47 52.97 47.47 51.15 45.52 51.15 45.52 47.52 49.42 47.52 49.42 49.34 51.36 49.34 51.36 51.15 53.48 51.15 53.48 53.15 55.26 53.15 55.26 56.78 53.48 56.78 53.48 58.77 51.36 58.77 51.36 60.59 49.42 60.59 49.42 62.41 45.52 62.41 45.52 58.77 47.47 58.77 47.47 56.96 49.58 56.96 49.58 52.97"/>
-            <polygon class="cls-1" points="43.13 47.52 43.13 51.28 42.33 51.28 42.33 53.43 41.65 53.43 41.65 56.54 40.79 56.54 40.79 59.5 40.09 59.5 40.09 62.41 37.42 62.41 37.42 58.65 38.12 58.65 38.12 55.73 38.98 55.73 38.98 52.77 39.66 52.77 39.66 49.68 40.46 49.68 40.46 47.52 43.13 47.52"/>
-          </svg>
-          <h1 class="text-display-4 frontlab--color no-margins flex--none">
-            frontlab
-          </h1>
-          <span class="flex__item"></span>
-        </div>
-      </div>
-      <div class="grid__content content--padding">
-        <div class="flex flow--row justify__content--center">
-          <div class="card disabled flex flex--row align__items--center justify__content--center">
-            <h2 class="title text--center">Experience</h2>
+    <div class="wrapper" onscroll="onScroll()">
+      <div class="container container--raw height--parent-full flex">
+        <div class="flex__item--initial">
+          <div class="toolbar container flex flow--row align-items--center">
+            <h1 id="title-frontlab" role="button" class="text-mono">Integrations</h1>
+            <span class="flex__item"></span>
+            <button id="button-wtf" class="button" type="button" aria-label="What is this project?">wtf</button>
           </div>
         </div>
-        <div class="flex flow--row justify__content--center">
-          <div class="card flex disabled flex--row align__items--center justify__content--center">
-            <h2 class="title text--center">Interactions</h2>
-          </div>
-          <div class="card disabled flex flex--row align__items--center justify__content--center">
-            <h2 class="title text--center">Micro(-)interactions</h2>
-          </div>
-        </div>
-        <div class="flex flow--row justify__content--center">
-          <div class="card disabled flex flex--row align__items--center justify__content--center">
-            <h2 class="title text--center">Layout</h2>
-          </div>
-          <div class="card disabled flex flex--row align__items--center justify__content--center">
-            <h2 class="title text--center">Components</h2>
-          </div>
-          <div class="card disabled flex flex--row align__items--center justify__content--center">
-            <h2 class="title text--center">States</h2>
+        <div class="flex__item--initial">
+          <div class="container flex flow--row align-items--center">
+            <span class="flex__item"></span>
+            <img src="/src/layout/images/icon-streamline-lab-tube-experiment@48x48.png" height="48px" style="width:auto;margin-right:8px;" alt="Tube icon.">
+            <h1 class="text-display-2 theme-color--frontlab no-margins flex__item--none">
+              GitHub API
+            </h1>
+            <span class="flex__item"></span>
           </div>
         </div>
-        <div class="flex flow--row justify__content--center">
-          <div class="card disabled flex flex--row align__items--center justify__content--center">
-            <h2 class="title text--center">Fundamentals</h2>
+        <div class="container container--raw flex__item flex flow--row">
+          <div class="container container--dense flex__item--initial flex">
+            <div class="frontlab-card disabled container flex__item flex justify-content--center m-b--none">
+              <h2 class="title">Action 1</h2>
+            </div>
+            <div class="frontlab-card disabled container flex__item flex justify-content--center m-b--none">
+              <h2 class="title">Action 2</h2>
+            </div>
+            <div class="frontlab-card disabled container flex__item flex justify-content--center m-b--none">
+              <h2 class="title">Action 3</h2>
+            </div>
+            <div class="frontlab-card disabled container flex__item flex justify-content--center m-b--none">
+              <h2 class="title">Action 4</h2>
+            </div>
+            <div class="frontlab-card disabled container flex__item flex justify-content--center m-b--none">
+              <h2 class="title">Action 5</h2>
+            </div>
           </div>
-          <div class="card disabled flex flex--row align__items--center justify__content--center">
-            <h2 class="title text--center">Architecture</h2>
-          </div>
-          <div id="card-engineering" class="card flex flex--row align__items--center justify__content--center">
-            <h2 class="title text--center">Engineering</h2>
-          </div>
-          <div class="card disabled flex flex--row align__items--center justify__content--center">
-            <h2 class="title text--center">Design</h2>
+          <div class="container flex__item flex m-sm">
+            <div id="integration-board" class="theme-border--frontlab height--parent-full"></div>
           </div>
         </div>
-        <div class="page__content flex flow--column align__items--center justify__content--center">
-          <p class="caption"><strong>Theoretical framework:</strong> Pyramid of Web Development</p>
-          <div id="web-development-researches"></div>
-        </div>
-      </div>
-      <div class="grid__footer">
       </div>
     </div>
     <script>
@@ -90,9 +58,9 @@
         const _toolbar_ = document.getElementsByClassName('toolbar')[0];
         const scrolled = _container_.scrollTop;
         if (scrolled > 50) {
-          _toolbar_.className = 'toolbar toolbar--raised flex flex--row align__items--center';
+          _toolbar_.className = 'toolbar toolbar--raised container flex flow--row align-items--center';
         } else {
-          _toolbar_.className = 'toolbar flex flex--row align__items--center';
+          _toolbar_.className = 'toolbar container flex flow--row align-items--center';
         }
       }
     </script>

@@ -1,0 +1,26 @@
+.frontlab-card {
+  margin: 4px;
+  max-width: 280px;
+  min-width: 200px;
+  max-height: 200px;
+  background-color: #DFDFDF;
+  transition: all 0.4s ease;
+}
+.frontlab-card:not(.disabled) {
+  box-shadow: $box_shadow;
+}
+.frontlab-card.inactive {
+  display: none;
+}
+.frontlab-card:focus {
+  outline: none;
+}
+.frontlab-card.disabled {
+  background-color: #EAEAEA;
+  color: #999999;
+}
+.frontlab-card:not(.disabled):hover {
+  cursor: pointer;
+  background-color: $accentColor;
+  box-shadow: $big_box_shadow;
+}

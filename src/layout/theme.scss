@@ -1,0 +1,190 @@
+////
+/// @group theme
+/// @author Rafael Goulart (faelplg)
+////
+
+@import './colors.scss';
+
+/// ## Frontlab theme
+///
+/// Default only.
+.theme-surface--frontlab {
+  background-color: $frontlab;
+  color: white;
+  fill: white;
+}
+.theme-color--frontlab {
+  color: $frontlab;
+  fill: $frontlab;
+}
+.theme-border--frontlab {
+  border: 1px solid $frontlab;
+  outline: none;
+}
+
+/// ## Black theme
+///
+/// Normal and light.
+.theme-surface--black {
+  background-color: $black;
+  color: white;
+  fill: white;
+}
+/// Black color theme.
+.theme-color--black,
+.mdc-top-app-bar .mdc-top-app-bar__navigation-icon.theme-color--black,
+.mdc-button.mdc-snackbar__action.theme-color--black {
+  color: $black;
+}
+/// ## Light black color theme
+.theme-color--light-black {
+  color: $light-black;
+}
+
+/// ## Blue theme
+///
+/// Normal and dark.
+.theme-surface--blue {
+  background-color: $blue;
+  color: white;
+  fill: white;
+}
+/// Blue color theme
+.theme-color--blue {
+  color: $blue;
+}
+/// ## Dark blue color theme
+.theme-color--light-blue {
+  color: $dark-blue;
+}
+
+/// ## Brown color
+///
+/// Used for fixed/approved items
+///
+/// @type Color
+// $brown: #8d6e63;
+/// ## Dark brown color
+///
+/// @type Color
+// $dark-brown: #6d4c41;
+
+/// ## Gray theme
+///
+/// Normal, light and dark.
+.theme-surface--gray,
+.mdc-top-app-bar.theme-surface--gray {
+  background-color: $gray;
+  color: $black;
+  fill: $black;
+}
+/// ## Light gray surface theme.
+.theme-surface--light-gray,
+.mdc-top-app-bar.theme-surface--light-gray {
+  background-color: $light-gray;
+  color: $black;
+  fill: $black;
+}
+/// ## Dark gray surface theme.
+.theme-surface---dark-gray {
+  background-color: $dark-gray;
+  color: $black;
+  fill: $black;
+}
+
+/// ## Green theme
+///
+/// Normal and dark.
+.theme-surface--green,
+.mdc-snackbar__surface.theme-surface--green {
+  background-color: $green;
+  color: $black;
+  fill: $black;
+}
+/// ## Dark green surface theme.
+.theme-surface---dark-green {
+  background-color: $dark-green;
+  color: $black;
+  fill: $black;
+}
+
+/// ## Green color
+///
+/// Used to indicate success.
+///
+/// @type Color
+// $green: #4caf50;
+/// ## Dark green color
+///
+/// @type Color
+// $dark-green: #358c35;
+
+/// ## Orange color
+///
+/// Used to indicate warning, alert.
+///
+/// @type Color
+// $orange: #FF8C00;
+
+/// ## Pink color
+///
+/// Used to indicate execution.
+///
+/// @type Color
+// $pink: #c2185b;
+/// ## Dark pink color
+///
+/// @type Color
+// $dark-pink: #ad1457;
+
+/// ## Purple color
+///
+/// Used to indicate action.
+///
+/// @type Color
+// $purple: #7e57c2;
+/// ## Dark purple color
+///
+/// @type Color
+// $dark-purple: #4d2c91;
+
+/// ## Red theme
+///
+/// Normal
+.theme-color--red {
+  color: $red;
+  fill: $red;
+}
+
+/// ## Transparent theme
+///
+/// Normal.
+.theme-surface--transparent,
+.mdc-top-app-bar.theme-surface--transparent {
+  background-color: transparent;
+  color: $black;
+  fill: $black;
+}
+
+/// ## White theme
+///
+/// Normal.
+.theme-surface--white,
+.mdc-top-app-bar.theme-surface--white {
+  background-color: white;
+  color: $black;
+  fill: $black;
+}
+
+/// ## Residuall color
+///
+/// @type Color
+// $residuall: #68BD62;
+/// ## Residuall ocean color
+///
+/// @type Color
+// $residuall-ocean: #1f8571;
+/// ## Residuall yellow color
+///
+/// @type Color
+// $residuall-yellow: #c5da51;

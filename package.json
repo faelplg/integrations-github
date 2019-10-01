@@ -2,7 +2,6 @@
   "name": "github-integration",
   "version": "0.1.0",
   "description": "Tests with GitHub API.",
-  "main": "index.js",
   "scripts": {
     "serve:dev": "echo \"Trying to serve the development environment...\" && webpack-dev-server -d --config webpack.serve.dev.config.js",
     "serve:dev:dashboard": "echo \"Trying to serve the development environment with dashboard visualization...\" && webpack-dashboard -- webpack-dev-server -d --config webpack.serve.dev.config.js",
@@ -19,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/faelplg/frontlab.git"
+    "url": "git+https://github.com/faelplg/github-integration.git"
   },
   "keywords": [
     "JavaScript",
@@ -29,9 +28,9 @@
   "author": "faelplg",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/faelplg/frontlab/issues"
+    "url": "https://github.com/faelplg/github-integration/issues"
   },
-  "homepage": "https://github.com/faelplg/frontlab#readme",
+  "homepage": "https://github.com/faelplg/github-integration#readme",
   "browserslist": [
     "last 1 version",
     "> 5%",

@@ -1,36 +1,47 @@
-/*
- * Variables
- */
-@import './assets/stylesheets/variables.scss';
-@import './assets/stylesheets/typography.scss';
-$backgroundColor: #FAFAFA;
-$accentColor: #f5e2ff;
-$frontlab: #AA00FF;
+////
+/// @group base
+/// @author Rafael Goulart (faelplg)
+////
 
-/*
- * frontlab theme
- */
-.frontlab--color {
-  color: $frontlab;
-}
+$lg: 1.6em;
+$md: 1.2em;
+$sm: .8em;
+$xs: .6em;
 
-/*
- * Base
- */
+$phone_only: 599px;
+$tablet_portrait_min: 600px;
+$tablet_portrait_max: 899px;
+$tablet_landscape_min: 900px;
+$tablet_landscape_max: 1199px;
+$desktop_min: 1200px;
+$desktop_max: 1799px;
+$big_desktop_min: 1800px;
+
+@import './layout/reset.scss';
+
+/// Remove overflow from the elements html and body.
 html, body {
-  height: 100%;
-  background-color: $backgroundColor;
-  color: #222222;
-  margin:0;
+  overflow: hidden;
+}
+/// Set section and wrapper to overflow vertically.
+section, .wrapper {
+  overflow-y: auto;
   overflow-x: hidden;
 }
-div {
+/// Set wrapper to have a relative position to act as a parent of all structures.
+.wrapper {
+  position: relative;
+}
+/// Normalize the height of the main structures with the height of the viewport.
+html, body, .wrapper {
+  height: 100vh;
+}
+/// Set native containers to have border-box value for box-sizing property.
+div, section, header, aside, fieldset {
   box-sizing: border-box;
 }
 
-/*
- * Grid styles
- */
+/// Grid styles
 #grid__container {
   overflow-y: scroll;
   height: 100%;
@@ -46,38 +57,171 @@ div {
   max-height: 100px;
 }
 
-/*
- * Flex styles
- */
+/// Container class.
+.container {
+  padding: 16px;
+  position: relative;
+}
+/* --tablet-portrait-max */
+@media only screen and (max-width: 1199px) {
+  .container {
+    padding: 8px;
+  }
+}
+/// A container with dense padding size. Commonly used for mobile structures.
+.container--dense {
+  padding: 8px;
+}
+/// A container without paddings.
+.container--raw {
+  padding: 0;
+}
+/// Vertical scrolling.
+.container--scroll-y {
+  overflow-y: auto;
+}
+/// Horizontal scrolling.
+.container--scroll-x {
+  overflow-x: auto;
+}
+
+/// Flexible class.
 .flex {
   display: flex;
 }
+/// Inline flexible container.
 .inline-flex {
   display: inline-flex;
 }
-
-.flow--row {
-  flex-flow: row wrap;
+/// A container with vertical orientation for flexible containers.
+///
+/// This orientation is set as default for flexible containers.
+.flex, .flow--column {
+  flex-flow: column;
 }
-.flow--column {
+/// A vertical orientation with wrap property for flexible containers.
+.flow--column-wrap {
   flex-flow: column wrap;
 }
-.flex__item,
-.flow--row *,
-.flow--column * {
+/// Horizontal orientation for flexible containers.
+.flow--row {
+  flex-flow: row;
+}
+/// Horizontal orientation with wrap property for flexible containers.
+.flow--row-wrap {
+  flex-flow: row wrap;
+}
+/// Flexible container responsivity following the device orientation preference.
+.flow--mobile, .flow--tablet, .flow--default {
+  flex-flow: row;
+}
+/* --phone-only */
+@media only screen and (max-width: 599px) {
+  .flow--mobile, .flow--tablet, .flow--default {
+    flex-flow: column;
+  }
+}
+/* --tablet-portrait-min to --tablet-portrait-max */
+@media only screen and (min-width: 600px) and (max-width: 899px) {
+  .flow--tablet, .flow--default {
+    flex-flow: column;
+  }
+}
+/* --tablet-landscape-min to --tablet-landscape-max */
+@media only screen and (min-width: 900px) and (max-width: 1199px) {
+  .flow--default {
+    flex-flow: column;
+  }
+}
+
+/// Flexible box with auto-grow property.
+.flex__item {
   flex: auto;
 }
-.flex--none {
+/// Flexible box with no shrink property.
+.flex__item--initial {
+  flex: initial;
+}
+.flex__item--none {
   flex: none;
 }
-.align__items--center {
+/// Flexible box will be sent to first position.
+.flex__item--first {
+  order: -1;
+}
+
+/// ## Element alignment
+///
+/// Align element at the start of the parent container.
+.align-items--start {
+  align-items: flex-start;
+}
+/// ## Element alignment
+///
+/// Align element at the center of the parent container.
+.align-items--center {
   align-items: center;
 }
-.justify__content--center {
+/* --phone-only */
+@media only screen and (max-width: 599px) {
+  /// ## Element alignment
+  ///
+  /// Align element at the center of the parent container only in mobile devices.
+  .align-mobile-items--center {
+    align-items: center;
+  }
+}
+/// ## Element alignment
+///
+/// Align element at the end of the parent container.
+.align-items--end {
+  align-items: flex-end;
+}
+.justify-content--start {
+  justify-content: flex-start;
+}
+.justify-content--center {
   justify-content: center;
 }
-.align__self--center {
-  align-self: center;
+// Phone only
+@media only screen and (max-width: 599px) {
+  .justify-mobile-content--center {
+    justify-content: center;
+  }
+}
+.justify-content--end {
+  justify-content: flex-end;
+}
+
+/// ## Element size
+///
+/// Set the element height of 100% of the viewport.
+.height--viewport-full {
+  height: 100vh;
+}
+/// ## Element size
+///
+/// Set the element height of 100% of the parent.
+.height--parent-full {
+  height: 100%;
+}
+/// ## Element size
+///
+/// Set the element width of 100% of the viewport.
+.width--viewport-full {
+  width: 100vw;
+}
+/* --phone-only */
+@media only screen and (max-width: 599px) {
+  .width--phone-viewport-full {
+    width: 100vw;
+  }
+}
+/// ## Element size
+///
+/// Set the element width of 100% of the parent.
+.width--parent-full {
+  width: 100%;
 }
 
 /*
@@ -122,57 +266,27 @@ div {
 /*
  * Toolbar
  */
-.toolbar {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 64px;
-  position: fixed;
-  padding: 0 16px;
-  background-color: $backgroundColor;
-  transition: all 0.6s ease;
-}
-.toolbar:not(.toolbar--raised) > h1 {
-  opacity: 0;
-}
-.toolbar--raised {
-  box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
-  border: none;
-  background-color: $accentColor;
-  color: #222;
-  opacity: 0.79;
-}
-
-/*
- * Cards
- */
-.card {
-  height: 100px;
-  margin: 5px;
-  max-width: 280px;
-  min-width: 200px;
-  background-color: #DFDFDF;
-  transition: all 0.4s ease;
-}
-.card:not(.disabled) {
-  box-shadow: $box_shadow;
-}
-.card.inactive {
-  display: none;
-}
-.card:focus {
-  outline: none;
-}
-.card.disabled {
-  background-color: #EAEAEA;
-  color: #999999;
-}
-.card:not(.disabled):hover {
-  cursor: pointer;
-  background-color: $accentColor;
-  box-shadow: $big_box_shadow;
-}
+// .toolbar {
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   height: 64px;
+//   position: fixed;
+//   padding: 0 16px;
+//   background-color: $backgroundColor;
+//   transition: all 0.6s ease;
+// }
+// .toolbar:not(.toolbar--raised) > h1 {
+//   opacity: 0;
+// }
+// .toolbar--raised {
+//   box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+//   border: none;
+//   background-color: $accentColor;
+//   color: #222;
+//   opacity: 0.79;
+// }
 
 /*
  * Icon style
@@ -209,37 +323,6 @@ div {
 }
 
 /*
- * Button styles
- */
-.button {
-  box-sizing: border-box;
-  background-color: $frontlab;
-  font-weight: bold;
-  color: white;
-  height: 36px;
-  min-width: 48px;
-  margin: 8px 16px;
-  padding: 0 16px;
-  box-shadow: 0 3px 1px -2px rgba(206, 16, 16, 0.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-  transition: box-shadow .28s cubic-bezier(.4,0,.2,1);
-  text-transform: uppercase;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-}
-.button:hover {
-  opacity: 0.82;
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
-}
-.button:active,
-.button:focus {
-  outline: none;
-}
-.button:active {
-  box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
-}
-
-/*
  * Tables
  */
 table {
@@ -252,9 +335,57 @@ tr > td {
   padding: 16px;
 }
 
-/*
- * Breath
- */
-.no-margins {
+/// ## Spacement utility
+///
+/// Set the paddings and margins.
+.m--sm {
+  margin: 4px;
+}
+.m {
+  margin: 8px;
+}
+.m--lg {
+  margin: 16px;
+}
+.m-l--sm {
+  margin-left: 4px;
+}
+.m-l {
+  margin-left: 8px;
+}
+.m-l--lg {
+  margin-left: 16px;
+}
+.m-t--sm {
+  margin-top: 4px;
+}
+.m-t {
+  margin-top: 8px;
+}
+.m-t--lg {
+  margin-top: 16px;
+}
+.m-r--sm {
+  margin-right: 4px;
+}
+.m-r {
+  margin-right: 8px;
+}
+.m-r--lg {
+  margin-right: 16px;
+}
+.m-b--sm {
+  margin-bottom: 4px;
+}
+.m-b {
+  margin-bottom: 8px;
+}
+.m-b--lg {
+  margin-bottom: 16px;
+}
+.m--none {
   margin: 0;
 }
+
+@import './layout/layout.scss';
+@import './components/components.scss';
