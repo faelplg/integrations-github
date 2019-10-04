@@ -1,7 +1,7 @@
 {
-  "name": "github-integration",
+  "name": "integrations-github",
   "version": "0.1.0",
-  "description": "Tests with GitHub API.",
+  "description": "Integrations project for GitHub.",
   "scripts": {
     "serve:dev": "echo \"Trying to serve the development environment...\" && webpack-dev-server -d --config webpack.serve.dev.config.js",
     "serve:dev:dashboard": "echo \"Trying to serve the development environment with dashboard visualization...\" && webpack-dashboard -- webpack-dev-server -d --config webpack.serve.dev.config.js",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/faelplg/github-integration.git"
+    "url": "git+https://github.com/faelplg/integrations-github.git"
   },
   "keywords": [
     "JavaScript",
@@ -28,9 +28,9 @@
   "author": "faelplg",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/faelplg/github-integration/issues"
+    "url": "https://github.com/faelplg/integrations-github/issues"
   },
-  "homepage": "https://github.com/faelplg/github-integration#readme",
+  "homepage": "https://github.com/faelplg/integrations-github#readme",
   "browserslist": [
     "last 1 version",
     "> 5%",
